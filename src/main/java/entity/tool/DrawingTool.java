@@ -1,5 +1,8 @@
-package entity.drawing.tool;
+package entity.tool;
+
+import entity.panel.Grid;
 
 public interface DrawingTool {
-    public Grid[][] 
+    public boolean validateInput(Grid[][] canvas);
+    public Grid[][] draw(Grid[][] canvas);
 }
