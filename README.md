@@ -12,7 +12,7 @@
 - The maximum width and height of the canvas will be 80x300.
 
 # special cases
-- Color can be changed back to defult background color.
+- Color can be changed back to default background color.
 enter command: C 18 5
 --------------------
 |                  |
