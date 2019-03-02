@@ -34,8 +34,8 @@ public class Canvas implements DrawingTool{
     }
 
     public boolean validateInput(Grid[][] canvas) {
-        boolean result = width>0 && height>0;
-        if(!result) System.out.println("width and height must be greater than 0");
+        boolean result = width<= 80 && width>0 && height<= 300 && height>0;
+        if(!result) System.out.println("width should be between 1 and 80; height should be between 1 and 300 ");
         return result;
     }
 
