@@ -3,6 +3,7 @@ package entity.tool;
 import entity.panel.Grid;
 import org.junit.Before;
 import org.junit.Test;
+import utility.Constant;
 
 import static org.junit.Assert.*;
 
@@ -29,6 +30,6 @@ public class LineTest {
         Line drawingTool= new Line("1", "2", "6", "2");
         canvas = drawingTool.draw(canvas);
 
-        assertEquals("mark a line on grid",true, canvas[2][1].getValue()=='x');
+        assertEquals("mark a line on grid",true, canvas[2][1].getValue()==Constant.LINE_MARK);
     }
 }

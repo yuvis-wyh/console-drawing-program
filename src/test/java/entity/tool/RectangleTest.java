@@ -3,6 +3,7 @@ package entity.tool;
 import entity.panel.Grid;
 import org.junit.Before;
 import org.junit.Test;
+import utility.Constant;
 
 import static org.junit.Assert.*;
 
@@ -29,6 +30,6 @@ public class RectangleTest {
         Rectangle drawingTool= new Rectangle("14", "1", "18", "3");
         canvas = drawingTool.draw(canvas);
 
-        assertEquals("mark x on grid",true, canvas[1][14].getValue()=='x');
+        assertEquals("mark x on grid",true, canvas[1][14].getValue()==Constant.LINE_MARK);
     }
 }

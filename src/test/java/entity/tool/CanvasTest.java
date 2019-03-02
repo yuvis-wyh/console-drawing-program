@@ -10,17 +10,23 @@ public class CanvasTest {
 
     @Test
     public void validateInput() throws Exception {
-        Canvas drawingTool1= new Canvas("0", "10");
-        Canvas drawingTool2= new Canvas("10", "10");
         Grid[][] canvas = new Grid[10][10];
+        Canvas drawingTool = new Canvas("0", "10");
+        assertEquals("invalid canvas size", false, drawingTool.validateInput(canvas));
 
-        assertEquals("invalid canvas size", false, drawingTool1.validateInput(canvas));
-        assertEquals("valid canvas size", true, drawingTool2.validateInput(canvas));
+        drawingTool = new Canvas("10", "10");
+        assertEquals("valid canvas size", true, drawingTool.validateInput(canvas));
+
+        drawingTool = new Canvas("81", "10");
+        assertEquals("invalid canvas size", false, drawingTool.validateInput(canvas));
+
+        drawingTool = new Canvas("10", "301");
+        assertEquals("invalid canvas size", false, drawingTool.validateInput(canvas));
     }
 
     @Test
     public void draw() throws Exception {
-        Canvas drawingTool= new Canvas("10", "10");
+        Canvas drawingTool = new Canvas("10", "10");
         Grid[][] canvas = drawingTool.draw(null);
 
         assertEquals("height of the canvas", 12, canvas.length);
