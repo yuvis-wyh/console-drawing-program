@@ -8,12 +8,12 @@ public class Canvas implements DrawingTool{
     private int width;
     private int height;
 
-    public Canvas(String width, String height) throws Exception {
+    public Canvas(String width, String height) throws IllegalArgumentException {
         if(InputValidator.isValidNum(width) && InputValidator.isValidNum(height)) {
             this.width = Integer.parseInt(width);
             this.height = Integer.parseInt(height);
         } else {
-            throw new Exception();
+            throw new IllegalArgumentException();
         }
     }
 

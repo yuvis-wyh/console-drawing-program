@@ -9,7 +9,7 @@ public class BucketFill implements DrawingTool{
     private Point point;
     private char color;
 
-    public BucketFill (String pointX, String pointY, String color) throws Exception {
+    public BucketFill (String pointX, String pointY, String color) throws IllegalArgumentException {
         if(InputValidator.isValidNum(pointX) && InputValidator.isValidNum(pointY)
                 && InputValidator.isValidColor(color)) {
             int valPointX = Integer.parseInt(pointX);
@@ -18,7 +18,7 @@ public class BucketFill implements DrawingTool{
             point = new Point(valPointX, valPointY);
             this.color = color.charAt(0);
         } else {
-            throw new Exception();
+            throw new IllegalArgumentException();
         }
     }
 

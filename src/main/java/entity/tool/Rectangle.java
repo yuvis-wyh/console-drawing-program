@@ -9,7 +9,7 @@ public class Rectangle implements DrawingTool{
     private Point startPoint;
     private Point endPoint;
 
-    public Rectangle(String startPointX, String startPointY, String endPointX, String endPointY) throws Exception {
+    public Rectangle(String startPointX, String startPointY, String endPointX, String endPointY) throws IllegalArgumentException {
         if(InputValidator.isValidNum(startPointX) && InputValidator.isValidNum(startPointY)
                 && InputValidator.isValidNum(endPointX) && InputValidator.isValidNum(endPointY)) {
             int valStartPointX = Integer.parseInt(startPointX);
@@ -19,7 +19,7 @@ public class Rectangle implements DrawingTool{
             this.startPoint = new Point(valStartPointX, valStartPointY);
             this.endPoint = new Point(valEndPointX, valEndPointY);
         } else {
-            throw new Exception();
+            throw new IllegalArgumentException();
         }
     }
 

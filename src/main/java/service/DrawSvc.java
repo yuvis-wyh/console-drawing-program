@@ -47,7 +47,7 @@ public class DrawSvc {
                 default:
                     System.out.println("unknown input command: " + inputs[0]);
             }
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             drawingTool = null;
         }
         return drawingTool;
